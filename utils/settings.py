@@ -2,5 +2,6 @@ import os
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
+    print(f"database : {os.environ.get('MONGO_URL')}")
     ENV:str = "dev"
-    MONGO_URL:str = "mongodb://db:27017/test" #os.environ.get('MONGO_URL')
+    MONGO_URL:str = os.environ.get('MONGO_URL')

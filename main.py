@@ -12,7 +12,7 @@ async def index():
     try:
         client.admin.command('ping')
         print("Pinged your deployment. You successfully connected to MongoDB!")
-        return JSONResponse(status_code=status.HTTP_200_OK,content={"message":"Hello world"})
+        return JSONResponse(status_code=status.HTTP_200_OK,content={"message":"Pinged your deployment. You successfully connected to MongoDB!"})
     except Exception as error:
         print(f"error :{str(error)}")
         return JSONResponse(status_code=status.HTTP_200_OK,content={"message":str(error)})
