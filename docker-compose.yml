@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    image: mongoapp
+    environment: 
+      MONGO_URL: "mongodb://db:27017/test-database"
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+  
+  db:
+    image: mongo
+
